@@ -52,7 +52,7 @@ jobs:
     - uses: gagle/package-version@master
       id: package-version
     - name: Tag and Release
-      uses: jasondavis303/tag-and-release-and-upload@v1.2.0
+      uses: jasondavis303/tag-and-release-and-upload@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         
