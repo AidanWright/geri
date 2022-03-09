@@ -49,7 +49,7 @@ jobs:
         schema: 'yyyy.MM.V.dd.P'
         V: '1'
         increase-patch: true
-    - uses: gagle/package-version@v1
+    - uses: gagle/package-version@master
       id: package-version
     - name: Tag and Release
       uses: jasondavis303/tag-and-release-and-upload@v1.2.0
