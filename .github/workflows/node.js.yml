@@ -51,14 +51,22 @@ jobs:
         increase-patch: true
     - uses: gagle/package-version@master
       id: package-version
-    - name: Tag and Release
-      uses: dothq/tag-and-release-and-upload@v1.0.2
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        
-        # Use the version from the previous step
-        version: v${{ steps.package-version.outputs.version }}
-        
-        assets: '[ "build/geri-win.exe", "build/geri-macos", "build/geri-linux", "example.config.js" ]'
-        overwrite: false
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: build/*
+        tag: v${{ steps.package-version.outputs.version }}
+        overwrite: true
+        file_glob: true
+    #- name: Tag and Release
+    #  uses: dothq/tag-and-release-and-upload@v1.0.2
+    #  with:
+    #    github-token: ${{ secrets.GITHUB_TOKEN }}
+    #    
+    #    # Use the version from the previous step
+    #    version: v${{ steps.package-version.outputs.version }}
+    #    
+    #    assets: '[ "build/geri-win.exe", "build/geri-macos", "build/geri-linux", "example.config.js" ]'
+    #    overwrite: false
     #name: run npm-version pipeline
