@@ -28,3 +28,18 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+    - name: 'Upload Windows Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: geri-win-x64.exe
+        path: build/geri-win.exe
+    - name: 'Upload Linux Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: geri-linux-x64
+        path: build/geri-linux
+    - name: 'Upload MacOS Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: geri-macos-x64
+        path: build/geri-macos
