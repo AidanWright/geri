@@ -15,7 +15,7 @@ const swarm = require('./swarm'); // where we handle creation of new bots
                                    * ensuring login of bots; removal of migrated/dead accounts; multiple swarms;
                                    */
 // configure our logger
-const date = new Date().toJSON().slice(0, 10).replace(/-/g, '-');
+const date = new Date().toJSON().slice(0, 10); //.replace(/-/g, '-');
 log4js.configure({
   appenders: {
     logFile: {
