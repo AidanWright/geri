@@ -1,6 +1,6 @@
 {
   "name": "geri",
-  "version": "0.1.0",
+  "version": "0.1.2022-03-09",
   "description": "a minecraft swarm bot used on mc.aidanw.org",
   "main": "geri.js",
   "bin": "geri.js",
