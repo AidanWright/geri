@@ -59,6 +59,10 @@ jobs:
         tag: v${{ steps.package-version.outputs.version }}
         overwrite: true
         file_glob: true
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'package.json'
+        push: true
     #- name: Tag and Release
     #  uses: dothq/tag-and-release-and-upload@v1.0.2
     #  with:
