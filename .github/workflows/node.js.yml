@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -42,4 +42,23 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: geri-macos-x64
-        path: build/geri-macos
+        path: build/geri-macos   
+    - name: 'change version'
+      uses: polygon-software/npm-version-date@master
+      with:
+        schema: 'yyyy.MM.V.dd.P'
+        V: '1'
+        increase-patch: true
+    - uses: gagle/package-version@v1
+      id: package-version
+    - name: Tag and Release
+      uses: jasondavis303/tag-and-release-and-upload@v1.2.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        
+        # Use the version from the previous step
+        version: v${{ steps.package-version.outputs.version }}
+        
+        assets: '[ "build/geri-win.exe", "build/geri-macos", "build/geri-linux", "example.config.js" ]'
+        overwrite: false
+    #name: run npm-version pipeline
