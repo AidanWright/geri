@@ -13,7 +13,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "log4js": "^6.4.2",
-    "mineflayer": "^4.1.0",
+    "mineflayer": "^4.8.0",
     "path": "^0.12.7",
     "readline": "^1.3.0",
     "util": "^0.12.4"
