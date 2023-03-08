@@ -12,7 +12,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "log4js": "^6.4.2",
+    "log4js": "^6.9.0",
     "mineflayer": "^4.1.0",
     "path": "^0.12.7",
     "readline": "^1.3.0",
